@@ -4,7 +4,12 @@
 
 <section
 	{...$$restProps}
-	style="background: {$background
-		? `url(${JSON.stringify($background)})`
-		: 'none'};"
+	style="background-image: {$background ? `url(${$background})` : 'none'};"
 />
+
+<style lang="scss">
+	section {
+		background-size: cover;
+		background-position: center;
+	}
+</style>

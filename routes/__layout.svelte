@@ -18,4 +18,8 @@
 	#root {
 		height: 100%;
 	}
+
+	body {
+		overflow: hidden;
+	}
 </style>
