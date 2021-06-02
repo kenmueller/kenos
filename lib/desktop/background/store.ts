@@ -7,11 +7,11 @@ import getValue from '../../message/value'
 
 const KEY = 'desktop.background'
 
-const background = readable<string | null>(null, set => {
+const background = readable<string | null | undefined>(undefined, set => {
 	if (!browser) return
 
-	const initialValue = fromStorage<string | null>(KEY)
-	if (initialValue !== undefined) set(initialValue)
+	const value = fromStorage(KEY)
+	set(typeof value === 'string' ? value : null)
 
 	const onMessage = (event: MessageEvent<unknown>) => {
 		if (!isSelf(event)) return
