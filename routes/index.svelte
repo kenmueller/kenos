@@ -1,18 +1,26 @@
+<script lang="ts">
+	import Desktop from '../components/Desktop.svelte'
+</script>
+
 <svelte:head>
 	<title>kenOS</title>
 </svelte:head>
 
 <main>
-	<h1>kenOS</h1>
+	<Desktop class="desktop" />
 </main>
 
 <style lang="scss">
 	main {
-		display: flex;
+		position: relative;
 		height: 100%;
 	}
 
-	h1 {
-		margin: auto;
+	main > :global(.desktop) {
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
 	}
 </style>
